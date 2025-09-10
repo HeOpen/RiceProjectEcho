@@ -1,0 +1,41 @@
+* {
+    /*Font for the icons*/
+    font-family: JetBrainsMono font Medium;
+    font-size: 15px;
+}
+
+/*Font color*/
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border-radius:0px;
+}
+
+/*Workspace size */
+#workspaces {
+    padding: 0px 3px;
+}
+/*Color, size and filling of workspaces*/
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    border: 0px solid #595959;
+    margin: 2px 0px;
+    color: #ffffff;
+}
+/*Mouse hover*/
+#workspaces button:hover {
+    background: rgba(76, 0, 130, 0.902);
+}
+
+/*Modules*/
+/*Module colors*/
+.modules-left,
+.modules-center,
+.modules-right
+{
+    background: rgba(39, 7, 62, 0.793);
+    margin: 5px 10px;
+    padding: 0 5px;
+    border-radius: 15px;
+}
