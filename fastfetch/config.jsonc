@@ -8,29 +8,34 @@
         },
         {
             "type": "title",
-            "key": " PC",
+            "key": "",
             "keyColor": "green"
         },
         {
-            "type": "display",
-            "format": "{width}x{height} {refresh_rate} Hz",
+            "type": "host",
+            "key": " Machine",
             "keyColor": "green"
         },
         {
             "type": "cpu",
-            "key": "│ ├󰍛CPU",
+            "key": "│ ├ CPU",
             "showPeCoreCount": true,
-            "format": "{1}",
             "keyColor": "green"
         },
         {
             "type": "gpu",
-            "key": "│ ├󰍛 GPU",
+            "key": "│ ├ 󰍛 GPU",
             "keyColor": "green"
         },
         {
             "type": "memory",
-            "key": "└ └ RAM",
+            "key": "└ └  RAM",
+            "keyColor": "green"
+        },
+        {
+            "type": "display",
+            "key": "󰹑 Monitors",
+            "compactType": "original-with-refresh-rate",
             "keyColor": "green"
         },
         {
@@ -51,28 +56,33 @@
         },
         {
             "type": "kernel",
-            "key": "│ ├ Kernel",
+            "key": "│ ├  Kernel",
             "keyColor": "yellow"
         },
         {
             "type": "packages",
-            "key": "│ ├󰏖 Packages",
+            "key": "│ ├ 󰏖 Packages",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "│ ├  Terminal",
             "keyColor": "yellow"
         },
         {
             "type": "shell",
-            "key": "│ ├ Shell",
+            "key": "│ ├  Shell",
             "keyColor": "yellow"
         },
         {
             "type": "command",
-            "key": "│ ├ OS Age",
+            "key": "│ ├  OS Age",
             "keyColor": "yellow",
             "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
         },
         {
             "type": "uptime",
-            "key": "└ └ Uptime",
+            "key": "└ └  Uptime",
             "keyColor": "yellow"
         },
         "break",
@@ -83,7 +93,7 @@
         },
         {
             "type": "lm",
-            "key": "│ ├ LM",
+            "key": "│ ├󰟵 LM",
             "keyColor": "blue"
         },
         {
