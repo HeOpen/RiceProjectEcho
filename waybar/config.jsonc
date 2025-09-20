@@ -1,11 +1,22 @@
+//  /$$      /$$                     /$$                          
+// | $$  /$ | $$                    | $$                          
+// | $$ /$$$| $$  /$$$$$$  /$$   /$$| $$$$$$$   /$$$$$$   /$$$$$$ 
+// | $$/$$ $$ $$ |____  $$| $$  | $$| $$__  $$ |____  $$ /$$__  $$
+// | $$$$_  $$$$  /$$$$$$$| $$  | $$| $$  \ $$  /$$$$$$$| $$  \__/
+// | $$$/ \  $$$ /$$__  $$| $$  | $$| $$  | $$ /$$__  $$| $$      
+// | $$/   \  $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$      
+// |__/     \__/ \_______/ \____  $$|_______/  \_______/|__/      
+//                         /$$  | $$                              
+//                        |  $$$$$$/                              
+//                         \______/                               
 {
     "layer": "top", // Waybar position
-    "spacing": 20, // Space between modules
+    "spacing": 15, // Space between modules
 
     "modules-left": ["hyprland/workspaces" ],
     "modules-center": [ "hyprland/window"],
     "modules-right": 
-    ["network","pulseaudio","bluetooth",
+    ["hyprland/language","network","pulseaudio","bluetooth",
     "backlight","battery","clock","custom/power"],
 
     //Clock and calendar
@@ -50,24 +61,24 @@
     },
     //Sound
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
+        "format": "{icon} {volume} %",
+        "format-bluetooth": "{icon}  {volume}%",
         "format-muted": "󰝟 ",
         "format-icons": {
             "headphone": " ",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": " ",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [" ", " "]
+            "default": [" ", "  "]
         },
         "scroll-step": 1,
         "on-click": "pavucontrol"
     },
     //Bluetooth
     "bluetooth": {
-    "format": "󰂰",
+    "format": " ",
     "tooltip": "Bluetooth",
     "on-click": "blueman-manager",
     "return-type": "json"
@@ -110,6 +121,14 @@
             "persistent-workspaces": {
                 "*": [ 1,2,3,4]
             }
-        }
+        },
+    //Keyboard layout
+    "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-es": "ES",
+    "format-ru": "RU"
+}
+
 
 }
