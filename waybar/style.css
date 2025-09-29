@@ -1,7 +1,7 @@
 * {
     /*Font for the icons*/
     font-family: JetBrainsMono font Medium;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 /*Font color*/
@@ -19,7 +19,7 @@ window#waybar {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    border: 0px solid #595959;
+    border: 0px solid #ff0000;
     margin: 2px 0px;
     color: #ffffff;
 }
@@ -34,7 +34,7 @@ window#waybar {
 .modules-center,
 .modules-right
 {
-    background: rgba(39, 7, 62, 0.793);
+    background: rgba(0, 0, 0, 0.351);
     margin: 5px 10px;
     padding: 0 5px;
     border-radius: 15px;
