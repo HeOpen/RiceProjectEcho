@@ -86,7 +86,7 @@
     //Wifi
     "network": {
             "format-wifi":"  ",
-            "format-ethernet":" ",
+            "format-ethernet":"󰈀 ",
             "format-disconnected": " ",
             "tooltip-format-disconnected": "Desconectado",
             "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
@@ -123,11 +123,11 @@
             }
         },
     //Keyboard layout
+    //Alt+Shift to switch between keyboard layouts
     "hyprland/language": {
     "format": "{}",
     "format-en": "EN",
-    "format-es": "ES",
-    "format-ru": "RU"
+    "format-es": "ES"
 }
 
 
