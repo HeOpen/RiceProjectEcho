@@ -1,31 +1,33 @@
 #!/bin/bash
 
-DIR="$HOME/Pictures/Wpp"
-STATE_FILE="$HOME/.config/hypr/last_wallpaper.txt"
+# Carpeta donde tienes tus wallpapers
+WALLPAPER_DIR="/home/eliabe/Pictures/Wpp"
+USED_LIST="$HOME/.used_wallpapers.txt"
 
-# Crear el archivo de estado si no existe
-mkdir -p "$(dirname "$STATE_FILE")"
-touch "$STATE_FILE"
+# Crear archivo de registro si no existe
+touch "$USED_LIST"
 
-# Listar todos los wallpapers
-WALLPAPERS=("$DIR"/*)
+# Obtener lista de todos los wallpapers
+ALL_WALLPAPERS=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' \))
 
-# Leer el índice del último wallpaper usado
-LAST_INDEX=$(cat "$STATE_FILE")
-if ! [[ "$LAST_INDEX" =~ ^[0-9]+$ ]] || [ "$LAST_INDEX" -ge "${#WALLPAPERS[@]}" ]; then
-    LAST_INDEX=-1
+# Filtrar los que ya se usaron
+UNUSED_WALLPAPERS=$(grep -vxFf "$USED_LIST" <<< "$ALL_WALLPAPERS")
+
+# Si no quedan sin usar, reiniciamos la lista
+if [ -z "$UNUSED_WALLPAPERS" ]; then
+    echo "Todos los wallpapers ya fueron usados, reiniciando lista..."
+    > "$USED_LIST"  # vacía el archivo
+    UNUSED_WALLPAPERS="$ALL_WALLPAPERS"
 fi
 
-# Calcular el índice del siguiente wallpaper
-NEXT_INDEX=$((LAST_INDEX + 1))
-if [ "$NEXT_INDEX" -ge "${#WALLPAPERS[@]}" ]; then
-    NEXT_INDEX=0
+# Elegir uno al azar
+WALLPAPER=$(echo "$UNUSED_WALLPAPERS" | shuf -n 1)
+
+# Aplicar el wallpaper con swww
+if [ -n "$WALLPAPER" ]; then
+    swww img "$WALLPAPER"
+    echo "$WALLPAPER" >> "$USED_LIST"  # guardar como usado
+    echo "Wallpaper aplicado: $WALLPAPER"
+else
+    echo "No se encontró ningún wallpaper en $WALLPAPER_DIR"
 fi
-
-# Aplicar wallpaper a todos los monitores
-for MON in $(swww query | awk -F: '{print $1}'); do
-    swww img -o "$MON" "${WALLPAPERS[$NEXT_INDEX]}"
-done
-
-# Guardar el nuevo índice
-echo "$NEXT_INDEX" > "$STATE_FILE"
