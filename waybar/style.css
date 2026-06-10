@@ -1,6 +1,19 @@
+/*
+//  /$$      /$$                     /$$                          
+// | $$  /$ | $$                    | $$                          
+// | $$ /$$$| $$  /$$$$$$  /$$   /$$| $$$$$$$   /$$$$$$   /$$$$$$ 
+// | $$/$$ $$ $$ |____  $$| $$  | $$| $$__  $$ |____  $$ /$$__  $$
+// | $$$$_  $$$$  /$$$$$$$| $$  | $$| $$  \ $$  /$$$$$$$| $$  \__/
+// | $$$/ \  $$$ /$$__  $$| $$  | $$| $$  | $$ /$$__  $$| $$      
+// | $$/   \  $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$      
+// |__/     \__/ \_______/ \____  $$|_______/  \_______/|__/      
+//                         /$$  | $$                              
+//                        |  $$$$$$/                              
+//                         \______/                               
+*/
 * {
     /*Font for the icons*/
-    font-family: JetBrainsMono font Medium;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 12px;
 }
 
@@ -13,11 +26,11 @@ window#waybar {
 
 /*Workspace size */
 #workspaces {
-    padding: 0px 3px;
+    padding: 0px 10px;
 }
 /*Color, size and filling of workspaces*/
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 1px;
     background-color: transparent;
     border: 0px solid #ff0000;
     margin: 2px 0px;
@@ -25,7 +38,7 @@ window#waybar {
 }
 /*Mouse hover*/
 #workspaces button:hover {
-    background: rgba(76, 0, 130, 0.902);
+    background: rgba(0, 255, 255, 0.902);
 }
 
 /*Modules*/
@@ -34,7 +47,7 @@ window#waybar {
 .modules-center,
 .modules-right
 {
-    background: rgba(0, 0, 0, 0.351);
+    background: rgba(0, 0, 0, 0.300);
     margin: 5px 10px;
     padding: 0 5px;
     border-radius: 15px;
